@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL20_NC" Id="{58de66ec-3aa9-4eb0-9d1d-dbde74c76218}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	gastAxis	:ARRAY[1..Param_NC.gc_NC_Max] OF AXIS_REF;
+END_VAR
+]]></Declaration>
+  </GVL>
+</TcPlcObject>

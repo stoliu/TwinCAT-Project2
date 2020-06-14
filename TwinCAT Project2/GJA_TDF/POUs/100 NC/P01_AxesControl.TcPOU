@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <POU Name="P01_AxesControl" Id="{29f54745-938a-48c6-8d47-d0edbbd9804b}" SpecialFunc="None">
+    <Declaration><![CDATA[PROGRAM P01_AxesControl
+VAR
+	// 系统上电
+	fbMC_Power		:ARRAY[1.. Param_NC.gc_NC_Max] OF MC_Power;
+	i				: INT	:= 1;
+END_VAR
+]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[FOR i:=1 TO Param_NC.gc_NC_Max DO
+fbMC_Power[i](
+	Axis:= GVL20_NC.gastAxis[i], 
+	Enable:= GVL1001_CommonSignal.gxEnable AND GVL1001_CommonSignal.gxPowerOn, 
+	Enable_Positive:= TRUE, 
+	Enable_Negative:= TRUE, 
+	Override:= GVL1001_CommonSignal.grOverride, 
+	BufferMode:= , 
+	Options:= , 
+	Status=> , 
+	Busy=> , 
+	Active=> , 
+	Error=> , 
+	ErrorID=> );
+END_FOR]]></ST>
+    </Implementation>
+    <LineIds Name="P01_AxesControl">
+      <LineId Id="20" Count="0" />
+      <LineId Id="8" Count="11" />
+      <LineId Id="5" Count="0" />
+      <LineId Id="22" Count="0" />
+    </LineIds>
+  </POU>
+</TcPlcObject>

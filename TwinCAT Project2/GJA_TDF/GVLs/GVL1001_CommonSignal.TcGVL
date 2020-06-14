@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4022.18">
+  <GVL Name="GVL1001_CommonSignal" Id="{c8527f97-c3c5-4c33-b24e-6330f4096e12}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	gxPowerOn		:BOOL; 	//系统上电
+	gxPowerOff		:BOOL;	//系统断电
+	grOverride		:REAL;	//override
+	
+	gxEnable		:BOOL;	//使能信号
+	gbSysReady		:BOOL;	//系统准备就绪
+	gbAlarm			:BOOL;	//系统故障
+	
+	
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>
